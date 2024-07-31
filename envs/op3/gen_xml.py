@@ -90,8 +90,8 @@ def builder(export_path):
     为右脚和左脚分别添加了一个盒状的碰撞几何体
     这些几何体被设置为特定的尺寸和位置，可能是为了更准确地模拟脚部与地面的接触
     """
-    # mjcf_model.worldbody.find('body', 'r_ank_pitch_link').add('geom', dclass='collision', size='0.1 0.05 0.01', pos='-0.0241 0.019 0', type='box')
-    # mjcf_model.worldbody.find('body', 'l_ank_pitch_link').add('geom', dclass='collision', size='0.1 0.05 0.01', pos='-0.0241 0.019 0', type='box')
+    mjcf_model.worldbody.find('body', 'r_ank_pitch_link').add('geom', dclass='collision', size='0.1 0.05 0.01', pos='-0.0241 0.019 0', type='box')
+    mjcf_model.worldbody.find('body', 'l_ank_pitch_link').add('geom', dclass='collision', size='0.1 0.05 0.01', pos='-0.0241 0.019 0', type='box')
 
     # ignore collision
     # """

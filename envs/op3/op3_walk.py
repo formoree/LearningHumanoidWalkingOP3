@@ -48,9 +48,9 @@ class Op3WalkEnv(mujoco_env.MujocoEnv):
         )
         # set goal height
         self.task._goal_height_ref = 0.28
-        self.task._total_duration = 1.6
-        self.task._swing_duration = 1.05
-        self.task._stance_duration = 0.55
+        self.task._total_duration = 1.2  # 1.1
+        self.task._swing_duration = 0.8 # 0.75
+        self.task._stance_duration = 0.4 # 0.35
         # call reset
         self.task.reset()
 
@@ -146,7 +146,7 @@ class Op3WalkEnv(mujoco_env.MujocoEnv):
 
         # modify init state acc to task
         root_adr = self.interface.get_jnt_qposadr_by_name('//unnamed_joint_0')[0]
-        self.init_qpos[root_adr+2] = 0.278 # 0.275
+        self.init_qpos[root_adr+2] = 0.268 # 0.278
         self.set_state(
             np.asarray(self.init_qpos),
             np.asarray(self.init_qvel)

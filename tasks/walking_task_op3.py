@@ -62,12 +62,12 @@ class WalkingTask(object):
         # root_pos = self._client.get_object_xpos_by_name(self._root_body_name, 'OBJ_BODY')[0:2]
         reward = dict(foot_frc_score=0.150 * rewards._calc_foot_frc_clock_reward(self, l_frc, r_frc),
                       foot_vel_score=0.150 * rewards._calc_foot_vel_clock_reward(self, l_vel, r_vel),
-                      orient_cost=0.0500 * (rewards._calc_body_orient_reward(self, self._lfoot_body_name) +
+                      orient_cost=0.150 * (rewards._calc_body_orient_reward(self, self._lfoot_body_name) +
                                            rewards._calc_body_orient_reward(self, self._rfoot_body_name) +
                                            rewards._calc_body_orient_reward(self, self._root_body_name))/3, # 0.05
-                      root_accel=0.050 * rewards._calc_root_accel_reward(self),
+                      root_accel=0.050 * rewards._calc_root_accel_reward(self),# 0.050
                       height_error=0.050 * rewards._calc_height_reward(self),
-                      com_vel_error=0.200 * rewards._calc_fwd_vel_reward(self),# 0.200
+                      com_vel_error=0.300 * rewards._calc_fwd_vel_reward(self),# 0.200
                       torque_penalty=0.050 * rewards._calc_torque_reward(self, prev_torque),
                       action_penalty=0.050 * rewards._calc_action_reward(self, prev_action),
         )
@@ -100,7 +100,7 @@ class WalkingTask(object):
 
     def reset(self):
         # 随机选择目标速度，可能是 0 或 0.3 到 0.4 之间的随机值
-        self._goal_speed_ref = np.random.choice([0, np.random.uniform(0.3, 0.4)])
+        self._goal_speed_ref = np.random.choice([0, np.random.uniform(0.4, 0.5)])
         # 为左右腿创建相位奖励，可能用于同步步态
         self.right_clock, self.left_clock = rewards.create_phase_reward(self._swing_duration,
                                                                         self._stance_duration,

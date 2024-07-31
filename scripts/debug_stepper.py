@@ -120,8 +120,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--path",
                         required=False,
-                        default='../trained/op3_walk/actor_17199.pt',
-                        # default='../logs_dir/actor_17199.pt',
+                        # default='../trained/op3_walk/actor_17199.pt',
+                        default='../logs_dir/actor_7999.pt',
                         type=str,
                         help="path to trained model dir",
     )

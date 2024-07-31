@@ -31,15 +31,14 @@ class JVRC:
         # define nominal pose
         base_position = [0, 0, 0.81]
         base_orientation = [1, 0, 0, 0]
-        # half_sitting_pose = [0,  0, 0, 0, 0, 0,
-        #                      0, 0, -0.03, 0.14,   0.3, 0,
-        #                      0, 0, 0.03, -0.14,  -0.3, 0,
-        # ] # degrees
+        # half_sitting_pose = [0, 0, 0, 0, 0, 0,
+        #                      0, 0, -25, 40, 15, 0,
+        #                      0, 0, 25, -40, -15, 0,
+        #                      ]  # degrees
         half_sitting_pose = [0, 0, 0, 0, 0, 0,
-                             0, 0, -15, 30, 15, 0,
-                             0, 0, 15, -30, -15, 0,
+                             0, 0, -30, 50, 21, 0,
+                             0, 0, 30, -50, -21, 0,
                              ]  # degrees
-
         # 'r_hip_yaw', 'r_hip_roll', 'r_hip_pitch', 'r_knee', 'r_ank_pitch', 'r_ank_roll'
         # 'l_hip_yaw', 'l_hip_roll', 'l_hip_pitch', 'l_knee', 'l_ank_pitch', 'l_ank_roll'
 

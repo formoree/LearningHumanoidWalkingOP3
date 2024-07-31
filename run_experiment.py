@@ -114,7 +114,7 @@ if __name__ == "__main__":
     parser.add_argument("--logdir", type=str, default="./logs_dir/")          # Where to log diagnostics to
     parser.add_argument("--input_norm_steps", type=int, default=100000) # 100000
     parser.add_argument("--n_itr", type=int, default=20000, help="Number of iterations of the learning algorithm")
-    parser.add_argument("--lr", type=float, default=1e-4, help="Adam learning rate") # 1e-4
+    parser.add_argument("--lr", type=float, default=2e-4, help="Adam learning rate") # 1e-4
     parser.add_argument("--eps", type=float, default=1e-5, help="Adam epsilon (for numerical stability)")
     parser.add_argument("--lam", type=float, default=0.95, help="Generalized advantage estimate discount")
     parser.add_argument("--gamma", type=float, default=0.99, help="MDP discount")
